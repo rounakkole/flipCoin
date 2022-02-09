@@ -10,7 +10,9 @@ namespace flipCoin
         static void Main(string[] args)
         {
             Console.WriteLine("flip coin simulator");
+
             FlipCoin();
+
         }
 
 
@@ -20,18 +22,34 @@ namespace flipCoin
             const int HEAD = 0;
             const int TAIL = 1;
 
+            //initilization and declaration
+            int headCount = 0;
+            int tailCount = 0;
+            int i = 0;
 
-            Random random = new Random();
-            int flipResult = random.Next(0,2);
-            if (flipResult == HEAD)
-            {
-                Console.WriteLine("Winner is Head");
-            }
-            else if (flipResult == TAIL)
-            {
-                Console.WriteLine("Winner is Tail");
 
+
+            while (i <= 21)
+            {
+
+                Random random = new Random();
+                int flipResult = random.Next(0, 2);
+                if (flipResult == HEAD)
+                {
+                    headCount++;
+
+                }
+                else if (flipResult == TAIL)
+                {
+                    tailCount++;
+
+
+                }
+                i++;
             }
+            Console.WriteLine($"Head {headCount}");
+
+            Console.WriteLine($"Tail {tailCount}");
 
 
             return 0;
